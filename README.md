@@ -21,3 +21,15 @@ Components
 - DatePicker PopUp
 - TimerPicker PopUp
 - OptionMenu PopUp
+
+#Screenshots
+
+* UI Skins screenshot  http://www.yapiodesign.com/github/ui.png
+* Alert PopUp screenshot 	http://www.yapiodesign.com/github/alert.png
+* Date Picker Popup screenshot 	http://www.yapiodesign.com/github/datepicker.png
+* Time Picker Popup screenshot	http://www.yapiodesign.com/github/timepicker.png
+* OptionsMenu Popup screenshot	http://www.yapiodesign.com/github/optionsmenu.png
+
+#Example project
+
+* Example project https://github.com/olsonjj/Flex-4.5-Android-UI-Example
