@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="true" version="3">
+  <includeClasses>
+    <classEntry path="com.yapiodesign.components.android.skins.AndroidButtonSkin"/>
+    <classEntry path="com.yapiodesign.components.android.skins.AndroidCheckBoxSkin"/>
+    <classEntry path="com.yapiodesign.components.android.assets.AlertIconBD"/>
+    <classEntry path="com.yapiodesign.components.android.assets.ClockIconBD"/>
+    <classEntry path="com.yapiodesign.components.android.button.AndroidButton"/>
+    <classEntry path="com.yapiodesign.components.android.events.AndroidButtonEvent"/>
+    <classEntry path="com.yapiodesign.components.android.assets.OptionMenu_IconBD"/>
+    <classEntry path="com.yapiodesign.components.android.timepicker.TimePicker"/>
+    <classEntry path="com.yapiodesign.components.android.skins.TimePickerSkin"/>
+  </includeClasses>
+  <includeResources>
+    <resourceEntry destPath="com/yapiodesign/components/android/assets/plus_icon.png" sourcePath="com/yapiodesign/components/android/assets/plus_icon.png"/>
+    <resourceEntry destPath="com/yapiodesign/components/android/assets/alert_icon.png" sourcePath="com/yapiodesign/components/android/assets/alert_icon.png"/>
+    <resourceEntry destPath="com/yapiodesign/components/android/assets/minus_icon.png" sourcePath="com/yapiodesign/components/android/assets/minus_icon.png"/>
+    <resourceEntry destPath="com/yapiodesign/components/android/assets/clock_icon.png" sourcePath="com/yapiodesign/components/android/assets/clock_icon.png"/>
+  </includeResources>
+  <namespaceManifests/>
+</flexLibProperties>

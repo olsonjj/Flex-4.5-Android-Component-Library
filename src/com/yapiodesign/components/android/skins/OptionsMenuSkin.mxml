@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+	ADOBE SYSTEMS INCORPORATED
+	Copyright 2008 Adobe Systems Incorporated
+	All Rights Reserved.
+
+	NOTICE: Adobe permits you to use, modify, and distribute this file
+	in accordance with the terms of the license agreement accompanying it.
+
+-->
+
+<!--- The default skin class for a Spark SkinnablePopUpContainer container.
+
+	@see spark.components.SkinnablePopUpContainer
+
+	@langversion 3.0
+	@playerversion Flash 10
+	@playerversion AIR 2.5
+	@productversion Flex 4.5
+-->
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		xmlns:fb="http://ns.adobe.com/flashbuilder/2009"
+		alpha.disabled="0.5"
+		creationComplete="initSkin()">
+
+	<fx:Metadata>
+		<![CDATA[ 
+        /** 
+         * @copy spark.skins.spark.ApplicationSkin#hostComponent
+         */
+        [HostComponent("com.yapiodesign.components.android.optionsmenu.OptionsMenu")]
+    ]]>
+	</fx:Metadata>
+
+	<fx:Script>
+		<![CDATA[
+			import com.yapiodesign.components.android.assets.OptionMenu_IconBD;
+
+			[Bindable]
+			private var icon:Bitmap;
+
+			protected function initSkin():void
+			{
+				icon = new Bitmap(new OptionMenu_IconBD(0, 0));
+			}
+		]]>
+	</fx:Script>
+
+	<s:states>
+		<s:State name="normal"/>
+		<s:State name="disabled"/>
+		<s:State name="closed"
+				 stateGroups="closedGroup"/>
+		<s:State name="disabledAndClosed"
+				 stateGroups="closedGroup"/>
+	</s:states>
+
+	<!-- Transitions for open and close -->
+	<s:transitions>
+		<s:Transition fromState="closed"
+					  toState="normal"
+					  autoReverse="true">
+			<s:Fade duration="150"
+					target="{chrome}"/>
+		</s:Transition>
+
+		<s:Transition fromState="disabledAndClosed"
+					  toState="disabled"
+					  autoReverse="true">
+			<s:Fade duration="150"
+					target="{chrome}"/>
+		</s:Transition>
+
+		<s:Transition fromState="normal"
+					  toState="closed"
+					  autoReverse="true">
+			<s:Fade duration="150"
+					target="{chrome}"/>
+		</s:Transition>
+
+		<s:Transition fromState="disabled"
+					  toState="disabledAndClosed"
+					  autoReverse="true">
+			<s:Fade duration="150"
+					target="{chrome}"/>
+		</s:Transition>
+	</s:transitions>
+
+	<s:Group id="chrome"
+			 left="0"
+			 right="0"
+			 top="0"
+			 bottom="0"
+			 visible.closedGroup="false">
+
+		<!--- Defines the appearance of the SkinnablePopUpContainer class's background. -->
+		<s:Rect id="background"
+				left="0"
+				right="0"
+				top="0"
+				bottom="0">
+			<s:fill>
+				<!--- @private -->
+				<s:SolidColor id="bgFill"
+							  color="#000000"
+							  alpha=".75"/>
+			</s:fill>
+		</s:Rect>
+
+		<!--
+		Note: setting the minimum size to 0 here so that changes to the host component's
+		size will not be thwarted by this skin part's minimum size.   This is a compromise,
+		more about it here: http://bugs.adobe.com/jira/browse/SDK-21143
+		-->
+		<!--- @copy spark.components.SkinnableContainer#contentGroup -->
+		<s:Group id="contentGroup"
+				 left="0"
+				 right="0"
+				 top="0"
+				 bottom="0"
+				 minWidth="0"
+				 minHeight="0">
+			<s:layout>
+				<s:BasicLayout/>
+			</s:layout>
+
+			<!-- Options Menu -->
+			<s:Group width="440"
+					 height="580"
+					 horizontalCenter="0"
+					 verticalCenter="0">
+
+				<!-- white bkgd -->
+				<s:Rect top="0"
+						left="0"
+						right="0"
+						bottom="0"
+						radiusX="8"
+						radiusY="8">
+					<s:fill>
+						<s:SolidColor color="#FFFFFF"/>
+					</s:fill>
+				</s:Rect>
+
+				<s:VGroup height="100%"
+						  left="3"
+						  right="3">
+
+					<!-- top section-->
+					<s:Group width="100%"
+							 height="80">
+						<!-- top panel bkgd -->
+						<s:Rect top="3"
+								width="100%"
+								height="80"
+								topLeftRadiusX="4"
+								topLeftRadiusY="4"
+								topRightRadiusX="4"
+								topRightRadiusY="4">
+							<s:fill>
+								<s:SolidColor color="#424242"/>
+							</s:fill>
+						</s:Rect>
+
+						<s:Image source="{icon}"
+								 verticalCenter="0"
+								 left="15"/>
+
+						<!-- REQUIRED -->
+						<s:Label id="_title"
+								 color="#FFFFFF"
+								 fontSize="32"
+								 fontWeight="normal"
+								 verticalCenter="3"
+								 left="60"/>
+					</s:Group>
+
+					<!-- list -->
+					<!-- REQUIRED -->
+					<s:List id="_optionsList"
+							height="100%"
+							width="100%"
+							borderVisible="false"
+							contentBackgroundColor="#FFFFFF"/>
+
+					<!-- footer -->
+					<s:Group width="100%"
+							 height="80">
+						<!-- bottom panel bkgd -->
+						<s:Rect bottom="3"
+								width="100%"
+								height="80"
+								bottomLeftRadiusX="4"
+								bottomLeftRadiusY="4"
+								bottomRightRadiusX="4"
+								bottomRightRadiusY="4">
+							<s:fill>
+								<s:SolidColor color="#B7B7B7"/>
+							</s:fill>
+						</s:Rect>
+						<s:HGroup horizontalCenter="0"
+								  verticalCenter="0">
+							<s:Button id="_okButton"
+									  label="OK"/>
+
+							<s:Button id="_cancelButton"
+									  label="Cancel"/>
+						</s:HGroup>
+
+					</s:Group>
+				</s:VGroup>
+
+			</s:Group>
+
+
+		</s:Group>
+	</s:Group>
+
+</s:Skin>
