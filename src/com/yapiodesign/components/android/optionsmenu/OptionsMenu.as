@@ -126,7 +126,7 @@ package com.yapiodesign.components.android.optionsmenu
 			if (selectedIndex < 0)
 				return;
 
-			if (selectedIndex)
+			if (selectedIndex >= 0)
 				selectedItem = options.getItemAt(selectedIndex);
 
 			invalidateProperties();
