@@ -77,7 +77,8 @@ package com.yapiodesign.components.android.optionsmenu
 					break;
 
 				default:
-					close(true, selectedItem);
+					_selectedItem = _options.getItemAt(_selectedIndex);
+					close(true, _selectedItem);
 					break;
 			}
 
