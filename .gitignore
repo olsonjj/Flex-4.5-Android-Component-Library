@@ -1,2 +1,4 @@
+# Ignore these files
+.DS_Store
 /.settings
 /bin
